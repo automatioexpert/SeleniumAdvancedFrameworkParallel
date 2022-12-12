@@ -5,18 +5,22 @@ import org.testng.annotations.Test;
 
 import base.DriverFactory;
 import base.TestBase;
+import pages.HomePageObjects;
 import pages.LoginPage;
 
 public class TestCase extends TestBase {
 
 	LoginPage login = new LoginPage();
+	HomePageObjects home = new HomePageObjects();
 
 	@Test
 	public void TestCase1() {
 		System.out.println("Test Case1");
 		login.doLogin("administrator@localhost.com", "administrator");
 		System.out.println(DriverFactory.getInstance().getDriver().getTitle());
-		//Assert.fail();
+		home.checkIfDashBoardPageIsOpened();
+		home.clickOnSideSubMenu("Tasks","Add Task");
+			
 	}
 
 	@Test
@@ -31,7 +35,6 @@ public class TestCase extends TestBase {
 		System.out.println("Test Case3");
 		login.doLogin("administrator@localhost.com", "administrator");
 		System.out.println(DriverFactory.getInstance().getDriver().getTitle());
-		
 
 	}
 }
