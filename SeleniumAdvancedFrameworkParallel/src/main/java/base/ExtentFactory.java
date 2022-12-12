@@ -24,4 +24,8 @@ public class ExtentFactory {
 		extent.set(extentTest);
 	}
 
+	public void removeExtentObject() {
+		extent.remove();
+		
+	}
 }

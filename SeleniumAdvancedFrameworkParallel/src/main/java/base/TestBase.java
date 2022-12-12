@@ -6,9 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import utilities.ActionEngine;
 import utilities.PropertiesOperations;
 
-public class TestBase {
+public class TestBase  extends ActionEngine{
 	BrowserFactory browser = new BrowserFactory();
 
 	@BeforeMethod
