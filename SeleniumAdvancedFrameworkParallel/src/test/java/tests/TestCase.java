@@ -3,6 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import base.DriverFactory;
 import base.TestBase;
 import pages.LoginPage;
 
@@ -14,19 +15,22 @@ public class TestCase extends TestBase {
 	public void TestCase1() {
 		System.out.println("Test Case1");
 		login.doLogin("administrator@localhost.com", "administrator");
-		Assert.fail();
+		System.out.println(DriverFactory.getInstance().getDriver().getTitle());
+		//Assert.fail();
 	}
 
 	@Test
 	public void TestCase2() {
 		System.out.println("Test Case2");
-
+		login.doLogin("administrator@localhost.com", "administrator");
+		System.out.println(DriverFactory.getInstance().getDriver().getTitle());
 	}
 
 	@Test
 	public void TestCase3() {
 		System.out.println("Test Case3");
-	
+		login.doLogin("administrator@localhost.com", "administrator");
+		System.out.println(DriverFactory.getInstance().getDriver().getTitle());
 		
 
 	}
